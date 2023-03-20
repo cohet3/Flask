@@ -1,12 +1,24 @@
-from flask import Flask, request, render_template, url_for, abort, jsonify
+from flask import Flask, request, render_template, url_for, abort, jsonify, session
 from werkzeug.utils import redirect
 
 app = Flask(__name__)
+app.secret_key='Mi_llave_secret'
 
 @app.route("/")
 def hello_world():
-    app.logger.info(f'Entramos al path /{request.path}')
-    return "<p>Hello, World!!!!</p>"
+    if 'username' in session:
+        return 'El usuario ya ha hecho loggin'
+    return 'no ha hecho loggin'
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # Omitimos validación de usuario y password
+        usuario = request.form['username']
+        # agregar el usuario a la sesión
+        session['username'] = usuario
+        # session['username'] = request.form['usuario']
+        return redirect(url_for('hello_world'))
+    return render_template('login.html')
 
 @app.route("/saludar/<nombre>")
 def saludar(nombre):
