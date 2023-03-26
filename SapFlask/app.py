@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# Configuracionde la bd
+# Configuracionde la bd...
 USER_DB = 'postgres'
 PASS_DB = 'Deivid_2020'
 URL_DB = 'localhost'
