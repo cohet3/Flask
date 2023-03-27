@@ -13,7 +13,7 @@ FULL_URL_DB = f'postgresql://{USER_DB}:{PASS_DB}@{URL_DB}/{NAME_DB}'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = FULL_URL_DB
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# Inicializacion del objetoi db de sqlalchemy
+# Inicializacion del objeto db de sqlalchemy
 db = SQLAlchemy(app)
 
 # configurar flask-migrate
