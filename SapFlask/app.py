@@ -16,6 +16,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Inicializacion del objeto db de sqlalchemy
 db = SQLAlchemy(app)
 
+
 # configurar flask-migrate
 migrate = Migrate()
 migrate.init_app(app, db)
@@ -34,14 +35,15 @@ class Persona(db.Model):
             f'Apellido: {self.apellido}'
             f'Email: {self.email}'
         )
+
+
 @app.route('/')
 @app.route('/index')
 @app.route('/index.html')
 def inicio():
-    #Listado de personas
+    # Listado de personas
     personas = Persona.query.all()
     total_personas = Persona.query.count()
     app.logger.debug(f'Listado Personas: {personas}')
-    app.logger.debug(f'Total Personas')
+    app.logger.debug(f'Total Personas: {total_personas}')
     return render_template('index.html', personas=personas, total_personas=total_personas)
-
