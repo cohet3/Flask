@@ -10,6 +10,9 @@
     Total de personas: {{total_personas}}
 </div>
 <div>
+    <a href="/agregar">Agregar Persona</a>
+</div>
+<div>
     <table border="1">
         <thead>
         <tr>
@@ -26,6 +29,7 @@
                 <td>{{persona.nombre}}</td>
                 <td>{{persona.apellido}}</td>
                 <td>{{persona.email}}</td>
+                <td><a href="ver/{{persona.id}}">Ver</a></td>
             </tr>
         {% endfor %}
         </tbody>
