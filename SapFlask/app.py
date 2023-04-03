@@ -7,6 +7,14 @@ from database import db
 from forms import PersonaForm
 from models import Persona
 
+from flask import Flask, render_template, redirect, url_for
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+
+
 app = Flask(__name__)
 
 # Configuracionde la bd...
@@ -27,6 +35,27 @@ migrate = Migrate()
 migrate.init_app(app, db)
 #configuracion de flask-wtf
 app.config['SECRET_KEY']='vamos_a_tope_key'
+
+
+class Persona(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(250))
+    apellido = db.Column(db.String(250))
+    email = db.Column(db.String(250))
+
+    def __str__(self):
+        return (
+            f'Id: {self.id}'
+            f'Nombre: {self.nombre}'
+            f'Apellido: {self.apellido}'
+            f'Email: {self.email}'
+        )
+class PersonaForm(FlaskForm):
+    nombre = StringField('Nombre', validators=[DataRequired()])
+    apellido = StringField('Apellido')
+    email = StringField('Email', validators=[DataRequired()])
+    enviar = SubmitField('Enviar')
+
 
 @app.route('/')
 @app.route('/index')
@@ -62,6 +91,7 @@ def agregar():
            return redirect(url_for('inicio'))
     return render_template('agregar.html', forma=personaForm)
 
+
 @app.route('/editar/<int:id>', methods=['GET','POST'])
 def editar(id):
     #Recuperamos el objeto persona a editar
@@ -82,3 +112,4 @@ def eliminar(id):
     db.session.delete(persona)
     db.session.commit()
     return redirect(url_for('inicio'))
+
