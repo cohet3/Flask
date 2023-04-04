@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}- Portafolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div class='logo'>DANNY RODAS</div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('portfolio.index') }}">Inicio</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+</head>
+<body>
+<section>{% block content %}{% endblock %}</section>
+
+</body>
+</html>
