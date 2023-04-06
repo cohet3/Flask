@@ -1,13 +1,21 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-{% block content %}
-<h1>hola desde index</h1>
+
+{% block title %}
+Bienvenido
 {% endblock %}
-</body>
-</html>
+
+{% block content %}
+<div class='hero'>
+    <div class ='hero-content'>
+        <div class='left'>
+            <h1>Soy desarrollador</h1>
+            <h1>Danny Rodas</h1>
+            <p>Construyo aplicaciones en Python dinámicas utilizando bases de datos relacionales</p>
+            <a href='#contacto' class="btn">Contáctame</a>
+        </div>
+        <div class='right'>
+            <img src='{{ url_for('static', filename='big-data.png') }}' width=600px />
+        </div>
+    </div>
+</div>
+{% endblock %}

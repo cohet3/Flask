@@ -17,20 +17,22 @@ a:hover {
 color: #f84f07;
 }
 
-html header {
+html body header {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
     box-shadow: 3px 0 5px #aaa;
     padding: 15px 30px;
+    position: relative;
+    z-index: 2;
 }
 
-header .logo {
+header logo {
     font-sice: 20px;
     fot-family:'Rubik', sans-serif;
     display: flex;
     align-items: center;
-    font-weight:700;
+    font-weight: 700;
  }
 
 html body nav ul {
@@ -42,4 +44,42 @@ html body nav ul li {
 }
 html body nav ul li a {
     padding: 0 15px;
+}
+.hero {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    background-color: #fff;
+    padding: 20px 50px;
+    justify-content: center;
+}
+.hero .hero-content {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+}
+.hero h1 {
+    font-family: 'Rufina', sans-serif;
+    font-size: 50px;
+    font_weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.hero p {
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 50px;
+}
+.left {
+    width: 600px;
+    align-self: center;
+}
+.btn {
+    background-color: #f84f07;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+a.btn {
+    color: #fff;
 }
