@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}- Portafolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&family=Rubik:wght@400;700&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+<title>{% block title %}{% endblock %}- Portafolio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&family=Rubik:wght@400;700&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
 <!--    estos enlaces de fuentes las buscamos en goggle elegimos el tamaño q queremois utilizar y copiamos los enlaces-->
+<body>
+  <header>
     <div class='logo'>DANNY RODAS</div>
     <nav>
         <ul>
@@ -17,9 +16,35 @@
             <li><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
-</head>
-<body>
+    </header>
+</body>
 <section>{% block content %}{% endblock %}</section>
+<div class="footer">
+    <div class="center full-width">
+        <div class="row">
+            <h3>Contáctame :)</h3>
+        </div>
+    </div>
+    <div class="center full-width">
+        <div class="row">
+            <p>O también puedes seguirme en mis redes sociales</p>
+        </div>
+    </div>
+    <div class="center full-width social-links">
+        <div class="row">
+            <a href='https://twitter.com/DannyDavidto'><img class='social' width=30 src='{{ url_for('static',
+                filename='twitter.png') }}' /></a>
+            <a href='#'><img class='social' width=30 src='{{ url_for('static',
+                filename='github.png') }}' /></a>
+            <a href='#'><img class='social' width=30 src='{{ url_for('static',
+                filename='linkedin.png') }}' /></a>
+        </div>
+    </div>
+    <div class="made-with">
+        <div class="row">
+            <p>Hecho con amor por Danny Rodas</p>
+        </div>
+    </div>
+</div>
 
 </body>
-</html>

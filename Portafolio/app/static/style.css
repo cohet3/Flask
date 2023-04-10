@@ -105,3 +105,55 @@ a.btn {
 .vert-pat {
     padding: 20px 0;
 }
+.card {
+    background-color: #fff;
+    box-shadow: 1 0px 2px #ddd;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    padding: 20px 30px;
+}
+
+.third {
+    width: 360px;
+    margin: 20px;
+}
+.contact-form input {
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+}
+.contact-form textarea {
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    height: 100px;
+    padding: 15px 10px;
+    resize: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px);
+}
+
+.full-width {
+    width: 100%;
+    }
+
+.footer {
+    padding: 80px 0 0 0;
+    background-color: #333;
+    color: #fff;
+}
+.social-links a {
+    margin: 0 20px;
+}
+.social-links {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px;
+}
+.made-width {
+    padding: 0 30px;
+    color: #555;
+    }
